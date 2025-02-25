@@ -1,4 +1,5 @@
 import argparse
+from urllib.request import urlopen
 import numpy as np
 import cv2 as cv
 
@@ -15,7 +16,10 @@ def load_image_from_url(url, **kwargs):
     """
     
     ### START CODE HERE ###
-    ### TODO
+
+    res = urlopen(url)
+    image = cv.imdecode(np.array(bytearray(res.read()), dtype=np.uint8), **kwargs)
+
     ### END CODE HERE ###
     
     return image
