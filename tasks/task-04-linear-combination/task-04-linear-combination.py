@@ -20,10 +20,13 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
         raise ValueError("Input images must have the same dimensions.")
 
     ### START CODE HERE ###
-    ### TODO
+
+    result = a1 * i1 + a2 * i2
+    result = np.around(result).astype(np.uint8)
+
     ### END CODE HERE ###
 
-    return None
+    return result
 
 # Example Usage
 if __name__ == "__main__":
